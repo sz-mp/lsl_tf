@@ -8,6 +8,7 @@ LSL + Timeflux as a potential experimental infrastructure.
 ### running the demo
 - activate the conda environment `conda activate pylsl`
 - start LSL stream by running `python send_data.py`, which generates random 8-channel EEG data
+- alternatively, start LSL stream by running `python send_multi_data.py`, which generates random 8-channel EEG data and marker data
 - in another terminal, start timeflux by running `timeflux -d test_timeflux.yaml` (d for debug)
   - it will receive the data from LSL
   - do some basic sigproc (by adding 1 to the signal)
