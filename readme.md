@@ -2,13 +2,13 @@
 LSL + Timeflux as a potential experimental infrastructure.
 
 ### install
-- install conda environment with `conda env create -f environment.yml` 
-- only tested on macos, might need to install liblsl differently for other OSs first
+- install conda environment with `conda env create -f environment-mac.yml` (tested on mac), or `conda env create -f environment-win.yml` (tested on win10) 
+- (for windows, if timeflux throws an error on pytables, reinstall pytables from conda `conda install -c conda-forge pytables`)
   
 ### running the demo
 - activate the conda environment `conda activate pylsl`
 - start LSL stream by running `python send_data.py`, which generates random 8-channel EEG data
-- alternatively, start LSL stream by running `python send_multi_data.py`, which generates random 8-channel EEG data and marker data
+- in another terminal, start LSL stream by running `python send_marker.py`, which generates random markers in another outlet
 - in another terminal, start timeflux by running `timeflux -d test_timeflux.yaml` (d for debug)
   - it will receive the data from LSL
   - do some basic sigproc (by adding 1 to the signal)
